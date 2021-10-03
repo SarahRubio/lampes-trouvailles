@@ -26,7 +26,7 @@
             <div class="col-xs-12 col-md-8 row justify-content-between px-0">
                 {% for light in lights %}
                 <div class="card col-xs-12 col-md-4 border-none bg-grey">
-                    <img class="card-img-top" src="{{ light.first_image.url }}/" alt="photo {{ light.name }}">
+                    <img class="card-img-top" src="{{ light.first_image.url }}" alt="photo {{ light.name }}">
                     <div class="card-body bg-white">
                         <p class="card-title">
                             <a href="{{ light.get_absolute_url }}" class="text-reset stretched-link">

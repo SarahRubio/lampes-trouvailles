@@ -26,7 +26,7 @@
             <div class="col-xs-12 col-md-8 row justify-content-between px-0">
                 {% for furniture in furnitures %}
                 <div class="card col-xs-12 col-md-4 border-none bg-grey">
-                    <img class="card-img-top" src="{{ furniture.first_image.url }}/" alt="photo {{ furniture.name }}">
+                    <img class="card-img-top" src="{{ furniture.first_image.url }}" alt="photo {{ furniture.name }}">
                     <div class="card-body bg-white">
                         <p class="card-title">
                             <a href="{{ furniture.get_absolute_url }}" class="text-reset stretched-link">
