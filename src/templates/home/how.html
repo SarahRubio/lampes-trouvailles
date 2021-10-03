@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block head-title %}
+<title>Accueil | Lampes & Trouvailles</title>
+{% endblock %}
+
+{% block main %}
+<main class="py-4">
+
+    <div>
+        <h2 class="text-center h3 my-5 semi-bold">Notre fonctionnement</h2>
+        <div class="d-flex justify-content-between align-items-center py-5" id="steps">
+            <div class="mx-2 p-5 bg-green font-white">
+                <h3 class="h5 mb-5 semi-bold">Étape 1</h3>
+                <p class="mb-5">Chinez votre pièce favorite parmis lampes, mobiliers et trouvailles sur notre site.</p>
+                <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="{% url 'home' %}">Chinez avec nous <i class="ri-arrow-right-line ri-xl"></i></a></p>
+            </div>
+            <div class="mx-2 p-5 bg-white">
+                <h3 class="h5 mb-5 semi-bold">Étape 2</h3>
+                <p class="mb-5">Contactez nous pour effectuer un paiement sécurisé ou faire une offre raisonnable.</p>
+                <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="{% url 'contact' %}">En savoir plus <i class="ri-arrow-right-line ri-xl"></i></a></p>
+            </div>
+            <div class="mx-2 p-5 bg-green font-white">
+                <h3 class="h5 mb-5 semi-bold">Étape 3</h3>
+                <p class="mb-5">Organisons ensemble l'envoi ou la collecte de votre produit en toute sécurité</p>
+                <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="#paiement">Plus de détails <i class="ri-arrow-right-line ri-xl"></i></a></p>
+            </div>
+        </div>    
+    </div>
+
+    <div class="mt-5" id="paiement">
+        <h2 class="text-center h3 my-5 semi-bold pb-5">Paiement et livraison</h2>
+        <div class="d-flex row pb-5">
+            <div class="col-xs-12 col-md-5">
+                <div class="font-size--s">
+                    <p><strong>PAIEMENT</strong></p>
+                    <p>Nous vous proposons différents modes de paiement&nbsp;:</p>
+                    <ul class="pl-0 list-style--none">
+                        <li>-&nbsp;Virement bancaire</li>
+                        <li>-&nbsp;Mandat-cash</li>
+                        <li>-&nbsp;Espèce ou chèque si retrait sur place</li>
+                    </ul>
+                    <p>Toutes vos transactions seront parfaitement sécurisées.</p>    
+                    <p class="mt-5"><strong>OFFRE</strong></p>
+                    <p>Il est possible de faire des offres sur certains de nos produits. Cette option est mentionnée sur nos pages de recherche et de produit si disponible.</p>
+                    <p>Nous prenons le temps d'analyser la concurrence et d'évaluer nos objets de manière juste et équitable. C'est pour cela que nous vous demandons de faire des offres raisonnables.</p>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-xs-12 col-md-5">
+                <div class="font-size--s">
+                    <p><strong>LIVRAISON</strong></p>
+                    <p>Nous offrons plusieurs possibilités d’envoi. N’hésitez pas à nous contacter si vous souhaitez utiliser un transporteur en particulier afin que nous puissions organiser l’envoi ensemble&nbsp;:</p>
+                    <ul class="pl-0 list-style--none">
+                        <li>-&nbsp;Mondial relay (3 à 6 jours ouvrés) <a href="https://www.mondialrelay.fr/" class="text-reset semi-bold">plus d’infos</a></li>
+                        <li>-&nbsp;Cocolis (livraison écologique) <a href="https://www.cocolis.fr/" class="text-reset semi-bold">plus d’infos</a></li>
+                        <li>-&nbsp;Transporteur de votre choix</li>
+                    </ul>
+                    <p class="mt-5"><strong>RETRAIT</strong></p>
+                    <p>Retrait possible sur Angoulême (Charente).</p>
+                    <p>Pour les objets plus encombrants, possibilité de livraison avec des frais supplémentaires et dans un périmètre 30km autour d’Angoulême.</p>
+                    <p class="mt-5"><strong>RETOUR</strong></p>
+                    <p>Si le produit que vous avez reçu ne correspond pas à vos attentes, vous disposez du délai légal de rétractation de <strong>14 jours</strong> après réception pour retourner votre achat.</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</main>
+{% endblock %}
+
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock %}

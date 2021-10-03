@@ -1,0 +1,177 @@
+body {
+    background-color: #F2F2F2;
+    font-family: 'Poppins', sans-serif;
+    padding: 4rem 8rem 0 8rem;
+}
+
+header a {
+    color: #000 !important;
+    font-size: 0.95rem;
+}
+
+nav a {
+    padding: 0 1rem;
+}
+
+.green-btn {
+    color: #fff !important;
+    background-color: #424F24;
+    padding: .2rem 1rem;
+}
+
+.display-block {
+    display: block;
+}
+
+.bg-grey {
+    background-color: #F2F2F2;
+}
+
+.bg-green {
+    background-color: #424F24;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.font-white {
+    color: #fff !important;
+}
+
+.font-grey {
+    color: #9F9F9F;
+}
+
+.font-size--s {
+    font-size: 0.9rem;
+}
+
+.list-style--none {
+    list-style: none;
+}
+
+.border-none {
+    border: none;
+}
+
+#banner-small {
+    height: 10rem;
+    object-fit: cover;
+}
+
+#image-card {
+    height: 11rem;
+    width: 13rem;
+    object-fit: cover;
+}
+
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+.carousel-indicators li.active {
+    background-color: #424F24;
+}
+
+.semi-bold {
+    font-weight: 600 !important;
+}
+
+#mosaic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+#mosaic .nested {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+#mosaic div {
+    background-color: #eee;
+}
+
+#mosaic div:nth-child(odd) {
+    background-color: #ddd;
+}
+
+#steps h3 {
+    position: relative;
+}
+
+#steps h3::after {
+    content: "";
+    display: block;
+    top: 160%;
+    border-bottom: 2px solid #fff;
+    width: 15%;
+    position: absolute;
+}
+
+#steps .bg-white h3::after {
+    border-bottom: 3px solid #000;
+}
+
+#steps i,
+#history i,
+#decapage i {
+    vertical-align: middle;
+    margin-left: .5rem;
+}
+
+footer {
+    font-size: 0.9rem;
+}
+
+.line-height--xs {
+    line-height: 0.8;
+}
+
+.border-top--black {
+    border-top: 1px solid #000;
+}
+
+/* HOME */
+
+#banner-text {
+    position: absolute;
+    top: 16rem;
+    left: 5rem;
+    max-width: 19rem;
+}
+
+#banner-text h2 {
+    font-weight: 600;
+}
+
+.max-w-15 {
+    max-width: 15rem !important;
+}
+
+/* RESULTS PAGE */
+
+#number-result {
+    padding-left: 2.2rem;
+}
+
+.card-body:hover {
+    background-color: #424F24 !important;
+    color: #FFF;
+}
+
+/* RESPONSIVE MOBILE */
+
+@media screen and (max-width: 400px) {
+    body {
+        padding: 0 !important;
+    }
+
+    #nav-desktop {
+        display: none;
+    }
+}

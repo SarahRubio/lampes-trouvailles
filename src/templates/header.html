@@ -1,0 +1,15 @@
+<header>
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <a href="{% url 'home' %}">
+            <img src="/static/images/logo-big.png" alt="">
+        </a>
+        <nav class="px-5" id="nav-desktop">
+            <a href="{% url 'light-list' %}">Lampes</a>
+            <a href="{% url 'furniture-list' %}">Mobilier</a>
+            <a href="{% url 'finding-list' %}">Trouvailles</a>
+            <a href="{% url 'about' %}">À propos</a>
+            <a href="{% url 'how' %}">Notre fonctionnement</a>
+        </nav>
+        <a href="{% url 'contact' %}" class="green-btn">Contact</a>
+    </div>
+</header>
