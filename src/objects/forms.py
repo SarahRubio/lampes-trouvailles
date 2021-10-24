@@ -5,7 +5,6 @@ from django import forms
 from django.db.models import Q, F
 from django.core.exceptions import ValidationError
 from django.contrib.admin.widgets import FilteredSelectMultiple
-from django.contrib.postgres.search import SearchQuery, SearchRank
 
 from filters.models import Category, SubCategory, Color, Designer, Material, State, Style
 
