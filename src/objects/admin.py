@@ -8,10 +8,12 @@ class LightAdmin(admin.ModelAdmin):
 
     list_display = ['name', 'reference']
     prepopulated_fields = {'slug': ('name',)}
+    autocomplete_fields = ['designer', 'style', 'materials', 'state', 'colors']
+
     fields = [
         'name', 'slug', 'reference', 'description', 'first_image',
         'price', 'is_negotiable', 'state',
-        'designer', 'categories', 'style', 'materials',
+        'designer', 'categories', 'subcategories', 'style', 'materials',
         'colors', 'weight', 'height', 'width', 'depth',
         'is_outstanding', 'is_hightlighted',
     ]
@@ -27,6 +29,7 @@ class FurnitureAdmin(admin.ModelAdmin):
 
     list_display = ['name', 'reference']
     prepopulated_fields = {'slug': ('name',)}
+    autocomplete_fields = ['designer', 'style', 'materials', 'state', 'colors']
     fields = [
         'name', 'slug', 'reference', 'description', 'first_image',
         'price', 'is_negotiable', 'state',
@@ -46,6 +49,7 @@ class FindingAdmin(admin.ModelAdmin):
 
     list_display = ['name', 'reference']
     prepopulated_fields = {'slug': ('name',)}
+    autocomplete_fields = ['designer', 'style', 'materials', 'state', 'colors']
     fields = [
         'name', 'slug', 'reference', 'description', 'first_image',
         'price', 'is_negotiable', 'state',
