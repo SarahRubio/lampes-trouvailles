@@ -1,0 +1,32 @@
+<h2 class="accordion-header">
+    <button class="accordion-button collapsed bg-inherit semi-bold uppercase font-size--s ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#{{ field.name }}" aria-expanded="true" aria-controls="{{ field.name }}">
+        {{ field.label }}
+    </button>
+</h2>
+
+<div id="{{ field.name }}" class="accordion-collapse collapse" aria-labelledby="{{ field.name }}">
+    <div id="form-group-{{ field.name }}" class="fr-input-group {% if field.field.required %}required{% endif %}">
+        {% if field.help_text %}
+        <span class="field-help">{{ field.help_text|safe }}</span>
+        {% endif %}
+
+        {% if nest_field_class %}
+        <div class="{{ nest_field_class }}">
+        {% endif %}
+
+        {{ field }}
+
+        {% if nest_field_class %}
+        </div>
+        {% endif %}
+
+        {% if field.errors %}
+        <p class="error field-error">
+            ↑
+            {{ field.errors.0 }}
+            ↑
+        </p>
+        {% endif %}
+    </div>
+</div>
+

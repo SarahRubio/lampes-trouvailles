@@ -1,0 +1,52 @@
+{% load i18n %}
+
+<form id="search-form" action="" method="get" autocomplete='off'>
+
+    {{ form.apply_before.as_hidden }}
+
+    <div class="">
+        <div class="fr-col-12 fr-col-md-3">
+            {% include '_field_snippet_collapse.html' with field=form.subcategories%}
+        </div>
+
+        <div class="pt-2 row col-12 px-0 pb-3">
+            <label for="" class="semi-bold uppercase font-size--s pb-1">prix</label>
+            <div id="form-group-price_min" class="col-6">
+                <input type="number" name="price_min" value="" id="id_price_min" class="col-12">
+                <label for="id_price_min" class="uppercase font-size--s">min</label>        
+            </div>
+            <div id="form-group-price_max" class="col-6">
+                <input type="number" name="price_max" value="" id="id_price_max" class="col-12">
+                <label for="id_price_max" class="uppercase font-size--s">max</label>        
+            </div>
+        </div>
+
+        <div class="fr-col-12 fr-col-md-3 pt-2">
+            {% include '_checkbox_snippet.html' with field=form.is_negotiable %}
+        </div>
+
+        <div class="fr-col-12 fr-col-md-3">
+            {% include '_field_snippet_collapse.html' with field=form.designers %}
+        </div>
+
+        <div class="fr-col-12 fr-col-md-3">
+            {% include '_field_snippet_collapse.html' with field=form.style %}
+        </div>
+
+        <div class="fr-col-12 fr-col-md-3">
+            {% include '_field_snippet_collapse.html' with field=form.materials %}
+        </div>
+
+        <div class="fr-col-12 fr-col-md-3">
+            {% include '_field_snippet_collapse.html' with field=form.colors %}
+        </div>
+
+        <div class="fr-col-12 fr-col-md-3">
+            {% include '_field_snippet_collapse.html' with field=form.state %}
+        </div>
+    </div>
+
+    <button name="action" value="search-filter" class="green-btn btn border-radius--none mt-4 " type="submit">
+        Filtrer les résultats
+    </button>
+</form>

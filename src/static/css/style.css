@@ -1,3 +1,5 @@
+/* GENERAL */
+
 body {
     background-color: #F2F2F2;
     font-family: 'Poppins', sans-serif;
@@ -19,6 +21,14 @@ nav a {
     padding: .2rem 1rem;
 }
 
+a {
+    text-decoration: none;
+}
+
+.pr-0 {
+    padding-right: 0 important;
+}
+
 .display-block {
     display: block;
 }
@@ -29,6 +39,10 @@ nav a {
 
 .bg-green {
     background-color: #424F24;
+}
+
+.bg-inherit {
+    background-color: inherit !important;
 }
 
 .bg-white {
@@ -51,8 +65,21 @@ nav a {
     list-style: none;
 }
 
+.rotate-90 {
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
 .border-none {
     border: none;
+}
+
+.border-radius--none {
+    border-radius: 0 !important;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }
 
 #banner-small {
@@ -162,6 +189,40 @@ footer {
 .card-body:hover {
     background-color: #424F24 !important;
     color: #FFF;
+}
+
+/* SEARCH PAGE */
+
+#search-form li {
+    list-style: none;
+}
+
+#search-form p {
+    margin-bottom: 0.5rem;
+}
+
+#search-form ul {
+    padding-left: 0.5rem;
+}
+
+.accordion-button:not(.collapsed) {
+    color: inherit;
+    background-color: inherit;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: none;
+    outline: 0;
+    box-shadow: none;
+}
+
+/* ABOUT */
+
+#about-img {
+    height: 28rem;
+    object-fit: cover;    
 }
 
 /* RESPONSIVE MOBILE */

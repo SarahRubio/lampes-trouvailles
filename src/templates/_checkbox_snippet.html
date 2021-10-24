@@ -1,0 +1,26 @@
+<div class="fr-input-group{% if field.field.required %} required{% endif %} checkbox mb-2">
+
+    {% if nest_field_class %}
+    <div class="{{ nest_field_class }}">
+    {% endif %}
+
+    {{ field }}
+
+    {% if nest_field_class %}
+    </div>
+    {% endif %}
+
+    <label for="{{ field.id_for_label }}" class="semi-bold uppercase font-size--s">{{ field.label }}</label>
+
+    {% if field.help_text %}
+        <span class="field-help">{{ field.help_text }}</span>
+    {% endif %}
+
+    {% if field.errors %}
+    <p class="error field-error">
+        ↑
+        {{ field.errors.0 }}
+        ↑
+    </p>
+    {% endif %}
+</div>
