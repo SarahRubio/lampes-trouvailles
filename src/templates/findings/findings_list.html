@@ -7,25 +7,31 @@
 {% block main %}
 <main class="py-4">
 
-    <div class="d-flex row align-items-center">
-        <h2 class="h4 my-5 semi-bold col-xs-12 col-md-2">Des trouvailles pleines d'histoires</h2>
-        <div class="col-xs-12 col-md-10 pr-0">
+    <div class="d-flex row align-items-center justify-content-between">
+        <h2 class="h4 my-5 semi-bold col-xs-12 col-md-3">Des trouvailles pleines d'histoires</h2>
+        <div class="col-xs-12 col-md-9 ps-3">
             <img class="col-xs-12 col-md-12" id="banner-small" src="../static/images/banner3.png" alt="" height="100%">  
         </div>
     </div>
 
-    <div class="row justify-content-end mt-5">
-        <p class="font-size--s col-xs-12 col-md-8 col-offset-md-3 mb-4" id="number-result">
+    <div class="d-flex row justify-content-end mt-3">
+        <p class="font-size--s col-xs-12 col-md-9 col-offset-md-3 mb-4 ps-3">
+            {% if findings.all.count > 0 %}
             Trouvailles > {{ findings.all.count }} produit{{ findings.all.count|pluralize }}
+            {% else %}
+            Oups, il n'y a pour le moment <span class="text-reset semi-bold">aucun résultat correspondant à votre recherche</span>. N'hésitez pas à <a href="{% url 'contact' %}" class="text-reset semi-bold">nous contacter</a> pour que nous trouvions l'objet que vous recherchez&nbsp;!
+            {% endif %}
         </p>
     </div>
 
     <div class="container">
         <div class="d-flex row justify-content-between">
-            <div id="search-bar" class="col-xs-12 col-md-3"></div>
-            <div class="col-xs-12 col-md-8 row justify-content-between px-0">
+            <div id="search-bar" class="col-xs-12 col-md-3">
+                {% include '../_search_bar.html' %}
+            </div>
+            <div class="col-xs-12 col-md-9 row justify-content-between px-0">
                 {% for finding in findings %}
-                <div class="card col-xs-12 col-md-4 border-none bg-grey">
+                <div class="card col-xs-12 col-md-4 border-none bg-grey ps-0">
                     <img class="card-img-top" src="{{ finding.first_image.url }}" alt="photo {{ finding.name }}">
                     <div class="card-body bg-white">
                         <p class="card-title">
@@ -48,6 +54,5 @@
 
 {% block js %}
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-{% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{% endblock %} 
