@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head-title %}
+<title>{{ finding.name }} | Lampes & Trouvailles</title>
+{% endblock %}
+
+{% block main %}
+<main class="py-4 container">
+
+    <div class="row">
+        <div class="col-xs-12 col-md-7 mb-5 order-2 order-md-1">
+            <div class="col-12 col-md-12 mb-5 row">
+                <div class="col-12 col-md-3">
+                    <img src="{{ finding.first_image.url }}" alt="" class="col-12 col-md-12 p-0">
+                </div>
+                <div class="col-12 col-md-8">
+                    <img src="{{ finding.first_image.url }}" alt="" class="col-12 col-md-12 p-0">
+                </div>
+            </div>
+            <div class="col-12 col-md-12 font-size--s">
+                <p class="semi-bold">DESCRIPTION</p>
+                <p>{{ finding.description|safe }}</p>
+                <p><span class="semi-bold">Dimensions</span> H.{{ finding.height }}cm x L.{{ finding.width }}cm x P.{{ finding.depth }}cm</p>
+                <p><span class="semi-bold">Poids</span> {{ finding.weight }}kg</p>
+                <p><span class="semi-bold">Matériaux</span> {% for material in finding.materials.all %}{{ material }}{% endfor %}</p>
+                {% if finding.style.all %}
+                <p><span class="semi-bold">Style</span> {% for style in finding.style.all %}{{ style }}{% endfor %}</p>
+                {% endif %}
+                <p><span class="semi-bold">Couleur</span> {% for color in finding.colors.all %}{{ finding.colors }}{% endfor %}</p>
+                <p><span class="semi-bold">Designer</span> {% for designer in finding.designer.all %}{{ finding.designer }}{% endfor %}</p>
+            </div>    
+        </div>
+        <div class="col-12 col-md-4 order-1 order-md-2">
+            <div class="col-12 col-md-12">
+                <h1 class="h5 m-0">{{ finding.name }}</h1>
+                <p class="line-height--xs"><small class="semi-bold line-height--xs">{{ finding.price }}&nbsp;€</small></p>
+                <div class="font-size--s mt-4">
+                    <p><span class="semi-bold">Référence</span> {{ finding.reference }}</p>
+                    <p>{{ finding.description|safe|truncatechars:150 }}</p>
+                </div>
+                <a href="{% url 'contact' %}" class="green-btn text-center display-block mt-5 mb-5">Nous contacter</a>    
+            </div>
+            <div class="col-12 col-md-12">
+
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block js %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock %}
