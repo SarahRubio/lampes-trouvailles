@@ -69,10 +69,6 @@ class ObjectSearchForm(forms.Form):
     def filter_queryset(self, qs=None):
         """Filter querysets depending of input data."""
 
-        # If no qs was passed, just start with all published aids
-        if qs is None:
-            qs = Light.objects.all()
-
         if not self.is_bound:
             return qs
 

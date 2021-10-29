@@ -64,6 +64,12 @@ class LightList(SearchView):
         results = filter_form.filter_queryset(qs).distinct()
 
         return results
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['new_products'] = Light.objects.all()[:5]
+
+        return context
     
 
 class LightDetail(DetailView):
@@ -76,14 +82,34 @@ class LightDetail(DetailView):
         return context
 
 
-class FindingList(ListView):
+class FindingList(SearchView):
     template_name = 'findings/findings_list.html'
     context_object_name = 'findings'
     paginate_by = 18
+    form_class = ObjectSearchForm
 
     def get_queryset(self):
-        qs = Finding.objects.all()
-        return qs
+        """Return the list of results to display."""
+
+        qs = Finding.objects \
+            .prefetch_related('designer') \
+            .prefetch_related('categories') \
+            .prefetch_related('subcategories') \
+            .prefetch_related('style') \
+            .prefetch_related('materials') \
+            .prefetch_related('colors') \
+            .prefetch_related('state')
+
+        filter_form = self.form
+        results = filter_form.filter_queryset(qs).distinct()
+
+        return results
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['new_products'] = Finding.objects.all()[:5]
+
+        return context
 
 
 class FindingDetail(DetailView):
@@ -96,14 +122,34 @@ class FindingDetail(DetailView):
         return context
 
 
-class FurnitureList(ListView):
+class FurnitureList(SearchView):
     template_name = 'furnitures/furnitures_list.html'
     context_object_name = 'furnitures'
     paginate_by = 18
+    form_class = ObjectSearchForm
 
     def get_queryset(self):
-        qs = Furniture.objects.all()
-        return qs
+        """Return the list of results to display."""
+
+        qs = Furniture.objects \
+            .prefetch_related('designer') \
+            .prefetch_related('categories') \
+            .prefetch_related('subcategories') \
+            .prefetch_related('style') \
+            .prefetch_related('materials') \
+            .prefetch_related('colors') \
+            .prefetch_related('state')
+
+        filter_form = self.form
+        results = filter_form.filter_queryset(qs).distinct()
+
+        return results
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['new_products'] = Furniture.objects.all()[:5]
+
+        return context
 
 
 class FurnitureDetail(DetailView):

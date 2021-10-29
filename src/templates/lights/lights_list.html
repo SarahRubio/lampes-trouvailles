@@ -50,7 +50,35 @@
             <div class="col-12 col-md-12 justify-content-end mt-5">
                 {% include '_pagination.html' %}
             </div>  
-        </div>  
+        </div>
+        
+        {% if new_products %}
+        <h2 class="text-center h3 my-5 semi-bold">Nouveautés</h2>
+        <div class="container">
+            <div class="row">
+                {% for product in new_products %}
+                {% if forloop.counter0 == 0 %}
+                <div class="col-12 col-md-6 p-0">
+                    <a href="{{ product.get_absolute_url }}">
+                        <img src="{{ product.first_image.url }}" alt="photo {{ product.name }}" width="100%">        
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 p-0">
+                    <div class="row">
+                {% else %}
+                        <div class="col-6 col-md-6 px-0">
+                            <a href="{{ product.get_absolute_url }}">
+                                <img src="{{ product.first_image.url }}" alt="photo {{ product.name }}" width="100%">        
+                            </a>
+                        </div>
+                {% endif %}
+                {% endfor %}
+                    </div>
+                </div>   
+            </div> 
+        </div>
+        {% endif %}
+    
 </main>
 {% endblock %}
 

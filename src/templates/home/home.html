@@ -41,45 +41,47 @@
         </div>
     </div>
 
+    {% if new_products %}
     <h2 class="text-center h3 my-5 semi-bold">Nouveautés</h2>
     <div class="container">
-        <div class="d-flex row">
-            <div class="col-xs-12 col-md-6 p-0">
-                <img src="static/images/fauteuil.png" alt="" width="100%">        
+        <div class="row">
+            {% for product in new_products %}
+            {% if forloop.counter0 == 0 %}
+            <div class="col-12 col-md-6 p-0">
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{{ product.first_image.url }}" alt="photo {{ product.name }}" width="100%">        
+                </a>
             </div>
-            <div class="col-xs-12 col-md-6 p-0">
-                <div class="d-flex row">
-                    <div class="col-xs-12 col-md-6 px-0">
-                        <img src="static/images/lampe1.png" alt="" width="100%">        
+            <div class="col-12 col-md-6 p-0">
+                <div class="row">
+            {% else %}
+                    <div class="col-6 col-md-6 px-0">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{{ product.first_image.url }}" alt="photo {{ product.name }}" width="100%">        
+                        </a>
                     </div>
-                    <div class="col-xs-12 col-md-6 px-0">
-                        <img src="static/images/lampe1.png" alt="" width="100%">        
-                    </div>
-                    <div class="col-xs-12 col-md-6 px-0">
-                        <img src="static/images/lampe1.png" alt="" width="100%">        
-                    </div>
-                    <div class="col-xs-12 col-md-6 px-0">
-                        <img src="static/images/lampe1.png" alt="" width="100%">        
-                    </div>
+            {% endif %}
+            {% endfor %}
                 </div>
             </div>   
         </div> 
     </div>
+    {% endif %}
 
     <h2 class="text-center h3 my-5 semi-bold">Notre fonctionnement</h2>
     <div class="container">
         <div class="d-flex row justify-content-between pb-3" id="steps">
-            <div class="p-5 bg-green font-white col-md-4 col-xs-12">
+            <div class="p-5 bg-green font-white col-md-4 col-12">
                 <h3 class="h5 mb-5 semi-bold">Étape 1</h3>
                 <p class="mb-5">Chinez votre pièce favorite parmis lampes, mobiliers et trouvailles sur notre site.</p>
                 <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="#">Chinez avec nous <i class="ri-arrow-right-line ri-xl"></i></a></p>
             </div>
-            <div class="p-5 bg-white col-md-4 col-xs-12">
+            <div class="p-5 bg-white col-md-4 col-12">
                 <h3 class="h5 mb-5 semi-bold">Étape 2</h3>
                 <p class="mb-5">Contactez nous pour effectuer un paiement sécurisé ou faire une offre raisonnable.</p>
                 <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="#">En savoir plus <i class="ri-arrow-right-line ri-xl"></i></a></p>
             </div>
-            <div class="p-5 bg-green font-white col-md-4 col-xs-12">
+            <div class="p-5 bg-green font-white col-md-4 col-12">
                 <h3 class="h5 mb-5 semi-bold">Étape 3</h3>
                 <p class="mb-5">Organisons ensemble l'envoi ou la collecte de votre produit en toute sécurité</p>
                 <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="#">Plus de détails <i class="ri-arrow-right-line ri-xl"></i></a></p>
