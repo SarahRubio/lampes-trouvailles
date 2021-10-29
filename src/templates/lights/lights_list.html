@@ -5,50 +5,52 @@
 {% endblock %}
 
 {% block main %}
-<main class="py-4">
+<main class="py-4 container">
 
-    <div class="d-flex row align-items-center justify-content-between">
-        <h2 class="h4 my-5 semi-bold col-xs-12 col-md-3">Des lampes soigneusement chinées.</h2>
-        <div class="col-xs-12 col-md-9 ps-3">
-            <img class="col-xs-12 col-md-12" id="banner-small" src="../static/images/banner1.png" alt="">  
+        <div class="row align-items-center justify-content-between">
+            <h2 class="h4 semi-bold col-12 col-md-3" id="result-banner">Des lampes soigneusement chinées.</h2>
+            <div class="col-12 col-md-9 ps-3">
+                <img class="col-12 col-md-12" id="banner-small" src="../static/images/banner1.png" alt="">  
+            </div>
         </div>
-    </div>
 
-    <div class="d-flex row justify-content-end mt-3">
-        <p class="font-size--s col-xs-12 col-md-9 col-offset-md-3 mb-4 ps-3">
-            {% if lights.all.count > 0 %}
-            Lampes > {{ lights.all.count }} produit{{ lights.all.count|pluralize }}
-            {% else %}
-            Oups, il n'y a pour le moment <span class="text-reset semi-bold">aucun résultat correspondant à votre recherche</span>. N'hésitez pas à <a href="{% url 'contact' %}" class="text-reset semi-bold">nous contacter</a> pour que nous trouvions l'objet que vous recherchez&nbsp;!
-            {% endif %}
-        </p>
-    </div>
+        <div class="row justify-content-end mt-3">
+            <p class="font-size--s col-12 col-md-9 col-offset-md-3 mb-4 ps-3">
+                {% if lights.all.count > 0 %}
+                Lampes > {{ lights.all.count }} produit{{ lights.all.count|pluralize }}
+                {% else %}
+                Oups, il n'y a pour le moment <span class="text-reset semi-bold">aucun résultat correspondant à votre recherche</span>. N'hésitez pas à <a href="{% url 'contact' %}" class="text-reset semi-bold">nous contacter</a> pour que nous trouvions l'objet que vous recherchez&nbsp;!
+                {% endif %}
+            </p>
+        </div>
 
-    <div class="container">
-        <div class="d-flex row justify-content-between">
-            <div id="search-bar" class="col-xs-12 col-md-3">
+        <div class="row justify-content-between">
+            <div id="search-bar" class="col-12 col-md-3">
                 {% include '../_search_bar.html' %}
             </div>
-            <div class="col-xs-12 col-md-9 row justify-content-between px-0">
-                {% for light in lights %}
-                <div class="card col-xs-12 col-md-4 border-none bg-grey ps-0">
-                    <img class="card-img-top" src="{{ light.first_image.url }}" alt="photo {{ light.name }}">
-                    <div class="card-body bg-white">
-                        <p class="card-title">
-                            <a href="{{ light.get_absolute_url }}" class="text-reset stretched-link">
-                                {{ light.name }}
-                            </a>
-                        </p>
-                        <p><strong>{{ light.price }}&nbsp;€</strong></p>
+            <div class="col-12 col-md-9 mt-5">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        {% for light in lights %}
+                        <div class="card col-6 col-md-4 border-none bg-grey ps-0 mt-4">
+                            <img class="" src="{{ light.first_image.url }}" alt="photo {{ light.name }}" width="100%">
+                            <div class="card-body bg-white">
+                                <p class="card-title">
+                                    <a href="{{ light.get_absolute_url }}" class="text-reset stretched-link">
+                                        {{ light.name }}
+                                    </a>
+                                </p>
+                                <p><strong>{{ light.price }}&nbsp;€</strong></p>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-                {% endfor %}
             </div>
-        </div>
-        <div class="col-xs-12 col-md-12 justify-content-end mt-5">
-            {% include '_pagination.html' %}
-        </div>    
-    </div>
+            <div class="col-12 col-md-12 justify-content-end mt-5">
+                {% include '_pagination.html' %}
+            </div>  
+        </div>  
 </main>
 {% endblock %}
 

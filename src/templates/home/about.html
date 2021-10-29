@@ -5,44 +5,50 @@
 {% endblock %}
 
 {% block main %}
-<main class="py-4">
+<main class="py-4 container">
     <div class="mb-5">
-        <h2 class="text-center h3 my-5 pb-5 semi-bold">Notre histoire</h2>
-        <div id="history" class="row">
-            <div class="col-xs-12 col-md-5 row">
-                <img src="../static/images/banner1.png" alt="" class="col-xs-12 col-md-12" id="about-img">
-            </div>
-            <div class="col-md-1 p-0">
-            </div>
-            <div class="col-xs-12 col-md-6 font-size--s">
-                <p>Lampes & Trouvailles est une petite entreprise familiale née d'une passion pour tous ces objets du quotidien. Au cours de ces 20 dernières années, nous avons accumulé lampes, mobiliers, trouvailles, au départ pour notre plaisir et aujourd'hui par envie de partager cette passion avec nos acheteurs</p>
-                <p>La majorité de nos objets et trouvailles sont des coups de coeur chinés dans des caves, greniers, granges, et au cours de voyages. La plupart du temps, ils ont seulement été dépoussiérés et peuvent parfois nécessiter quelques réparations par volonté de conserver les éléments d'origine.</p>
-                <p>A Lampes & Trouvailles nous pronons l'honnêteté. C'est pour cela que nous avons décidé de travailler sans intermédiaire pour répondre directement à vos besoins et organiser vos achats de manière simple et efficace.</p>
-                <p>Vous êtes à la recherche d'un objet qui ne figure pas sur notre site&nbsp;? N'hésitez pas à <a href="{% url 'contact' %}" class="semi-bold text-reset">nous contacter</a>, nous ferons tout notre possible pour vous aider à le trouver.</p>
-                <p>N'attendez plus, redonnez vie à des objets remplis d'histoire&nbsp;!</p>    
-            </div>
-        </div>    
+        <h2 class="text-center h3 my-5 pb-5 semi-bold" id="page-title">Notre histoire</h2>
+        <div class="container">
+            <div id="history" class="row">
+                <div class="col-12 col-md-5 mb-5">
+                    <div class="row">
+                        <img src="../static/images/banner1.png" alt="" class="col-12 col-md-12" id="about-img">
+                    </div>
+                </div>
+                <div class="col-md-1 p-0">
+                </div>
+                <div class="col-12 col-md-6 font-size--s">
+                    <p>Lampes & Trouvailles est une petite entreprise familiale née d'une passion pour tous ces objets du quotidien. Au cours de ces 20 dernières années, nous avons accumulé lampes, mobiliers, trouvailles, au départ pour notre plaisir et aujourd'hui par envie de partager cette passion avec nos acheteurs</p>
+                    <p>La majorité de nos objets et trouvailles sont des coups de coeur chinés dans des caves, greniers, granges, et au cours de voyages. La plupart du temps, ils ont seulement été dépoussiérés et peuvent parfois nécessiter quelques réparations par volonté de conserver les éléments d'origine.</p>
+                    <p>A Lampes & Trouvailles nous pronons l'honnêteté. C'est pour cela que nous avons décidé de travailler sans intermédiaire pour répondre directement à vos besoins et organiser vos achats de manière simple et efficace.</p>
+                    <p>Vous êtes à la recherche d'un objet qui ne figure pas sur notre site&nbsp;? N'hésitez pas à <a href="{% url 'contact' %}" class="semi-bold text-reset">nous contacter</a>, nous ferons tout notre possible pour vous aider à le trouver.</p>
+                    <p>N'attendez plus, redonnez vie à des objets remplis d'histoire&nbsp;!</p>    
+                </div>
+            </div>    
+        </div>
     </div>
 
     <div class="border-top--black mb-5">
         <h2 class="text-center h3 my-5 semi-bold">Notre équipe</h2>
-        <div class="d-flex row justify-content-around">
-            <div class="col-xs-12 col-md-3">
-                <img src="/static/images/lampe1.png" alt="portrait du directeur" class="col-xs-12 col-md-12 p-0 mb-3">
-                <p class="text-left bold mb-0 mt-2 line-height--xs"><small><strong>PASCAL</strong></small></p>
-                <p class="text-left semi-bold mb-0"><small>Directeur</small></p>
-            </div>
-            <div class="col-xs-12 col-md-3">
-                <img src="/static/images/lampe1.png" alt="portrait de la responsable des achats" class="col-xs-12 col-md-12 p-0 mb-3">
-                <p class="text-left bold mb-0 mt-2 line-height--xs"><small><strong>CHRISTELLE</strong></small></p>
-                <p class="text-left semi-bold mb-0"><small>Responsable des achats</small></p>
-            </div>
-            <div class="col-xs-12 col-md-3">
-                <img src="/static/images/lampe1.png" alt="portrait de la responsable du SAV" class="col-xs-12 col-md-12 p-0 mb-3">
-                <p class="text-left bold mb-0 mt-2 line-height--xs"><small><strong>CHRISTELLE</strong></small></p>
-                <p class="text-left semi-bold mb-0"><small>Responsable SAV</small></p>
-            </div>
-        </div>    
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-6 col-md-3 my-4">
+                    <img src="/static/images/lampe1.png" alt="portrait du directeur" class="col-12 col-md-12 p-0 mb-3">
+                    <p class="text-left bold mb-0 mt-2 line-height--xs"><small><strong>PASCAL</strong></small></p>
+                    <p class="text-left semi-bold mb-0"><small>Directeur</small></p>
+                </div>
+                <div class="col-6 col-md-3 my-4">
+                    <img src="/static/images/lampe1.png" alt="portrait de la responsable des achats" class="col-12 col-md-12 p-0 mb-3">
+                    <p class="text-left bold mb-0 mt-2 line-height--xs"><small><strong>CHRISTELLE</strong></small></p>
+                    <p class="text-left semi-bold mb-0"><small>Responsable des achats</small></p>
+                </div>
+                <div class="col-6 col-md-3 my-4">
+                    <img src="/static/images/lampe1.png" alt="portrait de la responsable du SAV" class="col-12 col-md-12 p-0 mb-3">
+                    <p class="text-left bold mb-0 mt-2 line-height--xs"><small><strong>CHRISTELLE</strong></small></p>
+                    <p class="text-left semi-bold mb-0"><small>Responsable SAV</small></p>
+                </div>
+            </div>    
+        </div>
     </div>
 
 </main>

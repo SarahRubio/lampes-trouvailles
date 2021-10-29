@@ -1,7 +1,7 @@
-<header>
-    <div class="d-flex justify-content-between align-items-center mb-5">
+<header class="container px-0">
+    <div class="d-flex justify-content-between align-items-center mb-5" id="desktop-header">
         <a href="{% url 'home' %}">
-            <img src="/static/images/logo-big.png" alt="">
+            <img src="/static/images/logo.svg" alt="" id="logo-desktop">
         </a>
         <nav class="px-5" id="nav-desktop">
             <a href="{% url 'light-list' %}">Lampes</a>
@@ -12,4 +12,26 @@
         </nav>
         <a href="{% url 'contact' %}" class="green-btn">Contact</a>
     </div>
+    <div id="mobile-header">
+        <div class="d-flex justify-content-between align-items-center my-3 mx-3">
+            <a href="{% url 'home' %}">
+                <img src="/static/images/logo_mobile.svg" alt="" id="logo-mobile">
+            </a>
+            <a id="togglemenu" onclick="document.body.classList.toggle('menuopen');">
+                <span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
+        </div>
+    </div>
+    <nav class="px-5 my-5" id="menu">
+        <a href="{% url 'light-list' %}">Lampes</a>
+        <a href="{% url 'furniture-list' %}">Mobilier</a>
+        <a href="{% url 'finding-list' %}">Trouvailles</a>
+        <a href="{% url 'about' %}">À propos</a>
+        <a href="{% url 'how' %}">Notre fonctionnement</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
 </header>

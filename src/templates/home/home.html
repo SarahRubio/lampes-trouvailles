@@ -6,75 +6,89 @@
 
 {% block main %}
 
-<main class="py-4">
+<main class="pt-4 pb-5">
 
-    <div id="banner" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#banner" data-slide-to="0" class="active"></li>
-          <li data-target="#banner" data-slide-to="1"></li>
-          <li data-target="#banner" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="static/images/banner1.png" alt="Bannière Lampes & Trouvailles">
-            <div id="banner-text">
-                <h2 class="mb-4 pb-2">Des lampes soigneusement chinées.</h2>
-                <a href="{% url 'light-list' %}" class="green-btn">Découvrez</a>
+    <div class="container px-0">
+        <div id="banner" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#banner" data-slide-to="0" class="active"></li>
+              <li data-target="#banner" data-slide-to="1"></li>
+              <li data-target="#banner" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="static/images/banner1.png" alt="Bannière Lampes & Trouvailles">
+                <div id="banner-text">
+                    <h2 class="mb-4 pb-2">Des lampes soigneusement chinées.</h2>
+                    <a href="{% url 'light-list' %}" class="green-btn">Découvrez</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="static/images/banner2.png" alt="Bannière Lampes & Trouvailles">
+                <div id="banner-text" class="max-w-15">
+                    <h2 class="mb-4 pb-2">Du mobilier qui dure.</h2>
+                    <a href="{% url 'light-list' %}" class="green-btn">Découvrez</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="static/images/banner3.png" alt="Bannière Lampes & Trouvailles">
+                <div id="banner-text">
+                    <h2 class="mb-4 pb-2">Des trouvailles pleines d'histoires.</h2>
+                    <a href="{% url 'light-list' %}" class="green-btn">Découvrez</a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="static/images/banner2.png" alt="Bannière Lampes & Trouvailles">
-            <div id="banner-text" class="max-w-15">
-                <h2 class="mb-4 pb-2">Du mobilier qui dure.</h2>
-                <a href="{% url 'light-list' %}" class="green-btn">Découvrez</a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="static/images/banner3.png" alt="Bannière Lampes & Trouvailles">
-            <div id="banner-text">
-                <h2 class="mb-4 pb-2">Des trouvailles pleines d'histoires.</h2>
-                <a href="{% url 'light-list' %}" class="green-btn">Découvrez</a>
-            </div>
-          </div>
         </div>
     </div>
 
-    <h2 class="text-center h5 my-5 semi-bold">Nouveautés</h2>
+    <h2 class="text-center h3 my-5 semi-bold">Nouveautés</h2>
     <div class="container">
-        <div class="row">
-            <img src="static/images/fauteuil.png" alt="" class="col col-md-6 p-0">        
-            <div class="col-md-6 p-0">
-                <div class="row">
-                    <img src="static/images/lampe1.png" alt="" class="col-md-6 p-0">        
-                    <img src="static/images/lampe2.png" alt="" class="col-md-6 p-0">        
-                    <img src="static/images/siege.png" alt="" class="col-md-6 p-0">        
-                    <img src="static/images/commode.png" alt="" class="col-md-6 p-0">            
+        <div class="d-flex row">
+            <div class="col-xs-12 col-md-6 p-0">
+                <img src="static/images/fauteuil.png" alt="" width="100%">        
+            </div>
+            <div class="col-xs-12 col-md-6 p-0">
+                <div class="d-flex row">
+                    <div class="col-xs-12 col-md-6 px-0">
+                        <img src="static/images/lampe1.png" alt="" width="100%">        
+                    </div>
+                    <div class="col-xs-12 col-md-6 px-0">
+                        <img src="static/images/lampe1.png" alt="" width="100%">        
+                    </div>
+                    <div class="col-xs-12 col-md-6 px-0">
+                        <img src="static/images/lampe1.png" alt="" width="100%">        
+                    </div>
+                    <div class="col-xs-12 col-md-6 px-0">
+                        <img src="static/images/lampe1.png" alt="" width="100%">        
+                    </div>
                 </div>
+            </div>   
+        </div> 
+    </div>
+
+    <h2 class="text-center h3 my-5 semi-bold">Notre fonctionnement</h2>
+    <div class="container">
+        <div class="d-flex row justify-content-between pb-3" id="steps">
+            <div class="p-5 bg-green font-white col-md-4 col-xs-12">
+                <h3 class="h5 mb-5 semi-bold">Étape 1</h3>
+                <p class="mb-5">Chinez votre pièce favorite parmis lampes, mobiliers et trouvailles sur notre site.</p>
+                <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="#">Chinez avec nous <i class="ri-arrow-right-line ri-xl"></i></a></p>
+            </div>
+            <div class="p-5 bg-white col-md-4 col-xs-12">
+                <h3 class="h5 mb-5 semi-bold">Étape 2</h3>
+                <p class="mb-5">Contactez nous pour effectuer un paiement sécurisé ou faire une offre raisonnable.</p>
+                <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="#">En savoir plus <i class="ri-arrow-right-line ri-xl"></i></a></p>
+            </div>
+            <div class="p-5 bg-green font-white col-md-4 col-xs-12">
+                <h3 class="h5 mb-5 semi-bold">Étape 3</h3>
+                <p class="mb-5">Organisons ensemble l'envoi ou la collecte de votre produit en toute sécurité</p>
+                <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="#">Plus de détails <i class="ri-arrow-right-line ri-xl"></i></a></p>
             </div>
         </div>    
     </div>
 
-    <h2 class="text-center h5 my-5 semi-bold">Notre fonctionnement</h2>
-    <div class="d-flex justify-content-between align-items-center" id="steps">
-        <div class="mx-2 p-5 bg-green font-white">
-            <h3 class="h5 mb-5 semi-bold">Étape 1</h3>
-            <p class="mb-5">Chinez votre pièce favorite parmis lampes, mobiliers et trouvailles sur notre site.</p>
-            <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="#">Chinez avec nous <i class="ri-arrow-right-line ri-xl"></i></a></p>
-        </div>
-        <div class="mx-2 p-5 bg-white">
-            <h3 class="h5 mb-5 semi-bold">Étape 2</h3>
-            <p class="mb-5">Contactez nous pour effectuer un paiement sécurisé ou faire une offre raisonnable.</p>
-            <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="#">En savoir plus <i class="ri-arrow-right-line ri-xl"></i></a></p>
-        </div>
-        <div class="mx-2 p-5 bg-green font-white">
-            <h3 class="h5 mb-5 semi-bold">Étape 3</h3>
-            <p class="mb-5">Organisons ensemble l'envoi ou la collecte de votre produit en toute sécurité</p>
-            <p class="mt-5 pt-4"><a class="text-reset semi-bold" href="#">Plus de détails <i class="ri-arrow-right-line ri-xl"></i></a></p>
-        </div>
-    </div>
-
-    <h2 class="text-center h5 my-5 semi-bold">Notre histoire</h2>
-    <div id="history">
+    <h2 class="text-center h3 my-5 semi-bold">Notre histoire</h2>
+    <div id="history" class="container px-0">
         <div>
             <p class="text-center px-5 font-size--s">Lampes & Trouvailles est une petite entreprise familiale née d'une passion pour tous ces objets du quotidien. Au cours de ces 20 dernières années, nous avons accumulé lampes, mobilier, trouvailles, au départ pour notre plaisir et aujourd'hui par envie de partager cette passion avec nos acheteurs [...]</p>
             <p class=" text-center mt-5"><a class="text-reset semi-bold" href="{% url 'about' %}">En savoir plus <i class="ri-arrow-right-line ri-xl"></i></a></p>
