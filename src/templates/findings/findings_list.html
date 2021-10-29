@@ -5,17 +5,17 @@
 {% endblock %}
 
 {% block main %}
-<main class="py-4">
+<main class="py-4 container">
 
-    <div class="d-flex row align-items-center justify-content-between">
-        <h2 class="h4 my-5 semi-bold col-xs-12 col-md-3">Des trouvailles pleines d'histoires</h2>
-        <div class="col-xs-12 col-md-9 ps-3">
-            <img class="col-xs-12 col-md-12" id="banner-small" src="../static/images/banner3.png" alt="" height="100%">  
+    <div class="row align-items-center justify-content-between">
+        <h2 class="h4 semi-bold col-12 col-md-3" id="result-banner">Des trouvailles pleines d'histoire.</h2>
+        <div class="col-12 col-md-9 ps-3">
+            <img class="col-12 col-md-12" id="banner-small" src="../static/images/banner3.png" alt="">  
         </div>
     </div>
 
-    <div class="d-flex row justify-content-end mt-3">
-        <p class="font-size--s col-xs-12 col-md-9 col-offset-md-3 mb-4 ps-3">
+    <div class="row justify-content-end mt-3">
+        <p class="font-size--s col-12 col-md-9 col-offset-md-3 mb-4 ps-3">
             {% if findings.all.count > 0 %}
             Trouvailles > {{ findings.all.count }} produit{{ findings.all.count|pluralize }}
             {% else %}
@@ -24,31 +24,65 @@
         </p>
     </div>
 
-    <div class="container">
-        <div class="d-flex row justify-content-between">
-            <div id="search-bar" class="col-xs-12 col-md-3">
-                {% include '../_search_bar.html' %}
-            </div>
-            <div class="col-xs-12 col-md-9 row justify-content-between px-0">
-                {% for finding in findings %}
-                <div class="card col-xs-12 col-md-4 border-none bg-grey ps-0">
-                    <img class="card-img-top" src="{{ finding.first_image.url }}" alt="photo {{ finding.name }}">
-                    <div class="card-body bg-white">
-                        <p class="card-title">
-                            <a href="{{ finding.get_absolute_url }}" class="text-reset stretched-link">
-                                {{ finding.name }}
-                            </a>
-                        </p>
-                        <p><strong>{{ finding.price }}&nbsp;€</strong></p>
+    <div class="row justify-content-between">
+        <div id="search-bar" class="col-12 col-md-3">
+            {% include '../_search_bar.html' %}
+        </div>
+        <div class="col-12 col-md-9 mt-5">
+            <div class="container">
+                <div class="row justify-content-between">
+                    {% for finding in findings %}
+                    <div class="card col-6 col-md-4 border-none bg-grey ps-0 mt-4">
+                        <img class="" src="{{ finding.first_image.url }}" alt="photo {{ finding.name }}" width="100%">
+                        <div class="card-body bg-white">
+                            <p class="card-title">
+                                <a href="{{ finding.get_absolute_url }}" class="text-reset stretched-link">
+                                    {{ finding.name }}
+                                </a>
+                            </p>
+                            <p><strong>{{ finding.price }}&nbsp;€</strong></p>
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
-        <div class="col-xs-12 col-md-12 justify-content-end mt-5">
+        <div class="col-12 col-md-12 justify-content-end mt-5">
             {% include '_pagination.html' %}
-        </div>    
+        </div>  
     </div>
+
+    {% if new_products %}
+    <h2 class="text-center h3 my-5 semi-bold">Nouveautés</h2>
+    <div class="container">
+        <div class="row">
+            {% for product in new_products %}
+            {% if forloop.counter0 == 0 %}
+            <div class="col-12 col-md-6 p-0">
+                <div class="row">
+                    <div class="col-12 col-md-12 px-0">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{{ product.first_image.url }}" alt="photo {{ product.name }}" width="100%">        
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 p-0">
+                <div class="row">
+            {% else %}
+                    <div class="col-6 col-md-6 px-0">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{{ product.first_image.url }}" alt="photo {{ product.name }}" width="100%">        
+                        </a>
+                    </div>
+            {% endif %}
+            {% endfor %}
+                </div>
+            </div>   
+        </div> 
+    </div>
+    {% endif %}
+
 </main>
 {% endblock %}
 

@@ -48,9 +48,13 @@
             {% for product in new_products %}
             {% if forloop.counter0 == 0 %}
             <div class="col-12 col-md-6 p-0">
-                <a href="{{ product.get_absolute_url }}">
-                    <img src="{{ product.first_image.url }}" alt="photo {{ product.name }}" width="100%">        
-                </a>
+                <div class="row">
+                    <div class="col-12 col-md-12 px-0">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{{ product.first_image.url }}" alt="photo {{ product.name }}" width="100%">        
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="col-12 col-md-6 p-0">
                 <div class="row">
