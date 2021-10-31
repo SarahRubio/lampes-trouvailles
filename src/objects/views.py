@@ -4,6 +4,7 @@ from django.views.generic.edit import FormMixin
 
 from objects.models import Light, Finding, Furniture
 from objects.forms import ObjectSearchForm
+from filters.models import Color
 
 
 class SearchView(FormMixin, ListView):
@@ -38,6 +39,7 @@ class SearchView(FormMixin, ListView):
         context = super().get_context_data(**kwargs)
 
         context['current_search'] = self.request.session.get('SEARCH_COOKIE_NAME', '')
+        context['colors'] = Color.objects.all()
 
         return context
 

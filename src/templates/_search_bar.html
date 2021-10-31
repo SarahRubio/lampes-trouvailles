@@ -37,8 +37,19 @@
             {% include '_field_snippet_collapse.html' with field=form.materials %}
         </div>
 
-        <div class="fr-col-12 fr-col-md-3">
-            {% include '_field_snippet_collapse.html' with field=form.colors %}
+        <div class="fr-col-12 fr-col-md-3 mt-3">
+            <div id="form-group-colors" class="fr-input-group ">
+                <h2 class="semi-bold uppercase font-size--s ps-0 mb-4">couleurs</h2>
+                <ul id="id_colors" class="d-flex justify-content-around flex-wrap me-5">
+                {% for color in colors %}
+                <li>
+                    <label for="id_colors_{{ color.pk }}" class="checkbox">
+                        <input name="colors" style="background-color:{{ color.code }}!important" type="checkbox" id="id_colors_{{ color.pk }}" value="{{ color.pk }}" title="{{ color.name }}">
+                    </label>
+                <li>
+                {% endfor %}
+                </ul>
+            </div> 
         </div>
 
         <div class="fr-col-12 fr-col-md-3">
