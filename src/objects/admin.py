@@ -12,7 +12,7 @@ class LightAdmin(admin.ModelAdmin):
 
     fields = [
         'name', 'slug', 'reference', 'description', 'first_image',
-        'second_image', 'third_image', 'price', 'is_negotiable', 'state',
+        'second_image', 'third_image', 'fourth_image', 'price', 'is_negotiable', 'state',
         'designer', 'categories', 'subcategories', 'style', 'materials',
         'colors', 'weight', 'height', 'width', 'depth',
         'is_outstanding', 'is_hightlighted',
@@ -32,7 +32,7 @@ class FurnitureAdmin(admin.ModelAdmin):
     autocomplete_fields = ['designer', 'style', 'materials', 'state', 'colors']
     fields = [
         'name', 'slug', 'reference', 'description', 'first_image',
-        'second_image', 'third_image', 'price', 'is_negotiable', 'state',
+        'second_image', 'third_image', 'fourth_image', 'price', 'is_negotiable', 'state',
         'designer', 'categories', 'style', 'materials',
         'colors', 'weight', 'height', 'width', 'depth',
         'is_outstanding', 'is_hightlighted',
@@ -52,7 +52,7 @@ class FindingAdmin(admin.ModelAdmin):
     autocomplete_fields = ['designer', 'style', 'materials', 'state', 'colors']
     fields = [
         'name', 'slug', 'reference', 'description', 'first_image',
-        'second_image', 'third_image', 'price', 'is_negotiable', 'state',
+        'second_image', 'third_image', 'fourth_image', 'price', 'is_negotiable', 'state',
         'designer', 'categories', 'style', 'materials',
         'colors', 'weight', 'height', 'width', 'depth',
         'is_outstanding', 'is_hightlighted',

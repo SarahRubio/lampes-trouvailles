@@ -37,6 +37,15 @@ def logo_upload_to_3(instance, filename):
     filename = '{}/{}_logo_3{}'.format(object_name, name, extension)
     return filename
 
+def logo_upload_to_4(instance, filename):
+    """Rename uploaded files with the object's slug."""
+
+    _, extension = splitext(filename)
+    name = instance.slug
+    object_name = instance.__class__.__name__
+    filename = '{}/{}_logo_4{}'.format(object_name, name, extension)
+    return filename
+
 
 class Light(models.Model):
 
@@ -69,6 +78,11 @@ class Light(models.Model):
         'photo n°3',
         null=True, blank=True,
         upload_to=logo_upload_to_3,
+        help_text="Assurez vous que l'image n'est pas trop lourde.")
+    fourth_image = models.FileField(
+        'photo n°4',
+        null=True, blank=True,
+        upload_to=logo_upload_to_4,
         help_text="Assurez vous que l'image n'est pas trop lourde.")
     price = models.IntegerField(
         "prix de la lampe",
@@ -195,6 +209,11 @@ class Finding(models.Model):
         null=True, blank=True,
         upload_to=logo_upload_to_3,
         help_text="Assurez vous que l'image n'est pas trop lourde.")
+    fourth_image = models.FileField(
+        'photo n°4',
+        null=True, blank=True,
+        upload_to=logo_upload_to_4,
+        help_text="Assurez vous que l'image n'est pas trop lourde.")
     price = models.IntegerField(
         "prix de la trouvaille",
         blank=True)
@@ -319,6 +338,11 @@ class Furniture(models.Model):
         'photo n°3',
         null=True, blank=True,
         upload_to=logo_upload_to_3,
+        help_text="Assurez vous que l'image n'est pas trop lourde.")
+    fourth_image = models.FileField(
+        'photo n°4',
+        null=True, blank=True,
+        upload_to=logo_upload_to_4,
         help_text="Assurez vous que l'image n'est pas trop lourde.")
     price = models.IntegerField(
         "prix du meuble",
