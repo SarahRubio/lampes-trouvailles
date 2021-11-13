@@ -171,6 +171,10 @@ footer {
     line-height: 0.8;
 }
 
+.vertical-align--middle {
+    vertical-align: middle !important;
+}
+
 .border-top--black {
     border-top: 1px solid #000;
 }
