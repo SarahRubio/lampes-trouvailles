@@ -207,6 +207,12 @@ footer {
     color: #FFF;
 }
 
+/* DETAIL PAGE */
+
+#thumbs img:hover {
+    cursor: pointer;
+}
+
 /* SEARCH PAGE */
 
 #search-form li {
