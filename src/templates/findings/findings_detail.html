@@ -36,8 +36,8 @@
                 {% if finding.style.all %}
                 <p><span class="semi-bold">Style</span> {% for style in finding.style.all %}{{ style }}{% endfor %}</p>
                 {% endif %}
-                <p><span class="semi-bold">Couleur</span> {% for color in finding.colors.all %}{{ finding.colors }}{% endfor %}</p>
-                <p><span class="semi-bold">Designer</span> {% for designer in finding.designer.all %}{{ finding.designer }}{% endfor %}</p>
+                <p><span class="semi-bold">Couleur</span> {% for color in finding.colors.all %}{{ color }}{% endfor %}</p>
+                <p><span class="semi-bold">Designer</span> {% for designer in finding.designer.all %}{{ designer }}{% endfor %}</p>
             </div>    
         </div>
         <div class="col-12 col-md-4 order-1 order-md-2">

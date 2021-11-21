@@ -36,8 +36,8 @@
                 {% if furniture.style.all %}
                 <p><span class="semi-bold">Style</span> {% for style in furniture.style.all %}{{ style }}{% endfor %}</p>
                 {% endif %}
-                <p><span class="semi-bold">Couleur</span> {% for color in furniture.colors.all %}{{ furniture.colors }}{% endfor %}</p>
-                <p><span class="semi-bold">Designer</span> {% for designer in furniture.designer.all %}{{ furniture.designer }}{% endfor %}</p>
+                <p><span class="semi-bold">Couleur</span> {% for color in furniture.colors.all %}{{ color }}{% endfor %}</p>
+                <p><span class="semi-bold">Designer</span> {% for designer in furniture.designer.all %}{{ designer }}{% endfor %}</p>
             </div>    
         </div>
         <div class="col-12 col-md-4 order-1 order-md-2">
